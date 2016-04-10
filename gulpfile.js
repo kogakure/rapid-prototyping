@@ -86,7 +86,10 @@ gulp.task('styles', function() {
  * Lint PostCSS
  */
 gulp.task('lint-styles', ['styles'], function() {
-  return gulp.src('./css/*.css')
+  return gulp.src([
+    './postcss/**/*.css',
+    '!./postcss/vendor/*.css' // Don't lint files in a vendor/ folder
+  ])
   .pipe(postcss([
     stylelint(),
     reporter({ clearMessages: true })
