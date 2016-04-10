@@ -45,7 +45,7 @@ gulp.task('default', ['watch']);
  * Start browsersync task and then watch files for changes
  */
 gulp.task('watch', ['browsersync'], function() {
-  gulp.watch('postcss/*.css', ['lint-styles']);
+  gulp.watch('postcss/**/*.css', ['lint-styles']);
 });
 
 
